@@ -15,7 +15,7 @@
 
 - 💼 I’m currently working in hobbies.
 - 📚 I’m currently learning Machine Learning, Ruby on Rails and Software Engineering.
-- 🔑 Technologies: Python 🐍, PHP 💚, Laravel 💎
+- 🔑 Technologies: Python 🐍, PHP 💚, Laravel 💎, Typescript 🥊
 - 💡 Think before you act
 
 ![](https://komarev.com/ghpvc/?username=filipeas&color=blue&style=flat)
