@@ -13,9 +13,10 @@
 [![Outlook Badge](https://img.shields.io/badge/-felipealvessampaio@hotmail.com-c14438?style=flat-square&logo=Outlook&logoColor=white&link=mailto:felipealvessampaio@hotmail.com)](mailto:felipealvessampaio@hotmail.com)
 <!-- [![Twitter Badge](https://img.shields.io/badge/-filipeas-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white)](https://twitter.com/filipeas) -->
 
-- 💼 I’m currently working in hobbies.
-- 📚 I’m currently learning Machine Learning, Ruby on Rails and Software Engineering.
+- 💼 Deep learning is awesome!
+- 📚 I’m currently learning Machine Learning, Typescript, Nodejs and Software Engineering.
 - 🔑 Technologies: Python 🐍, PHP 💚, Laravel 💎, Typescript 🥊
+- Technologies I've Worked With: Java, C and C++.
 - 💡 Think before you act
 
 ![](https://komarev.com/ghpvc/?username=filipeas&color=blue&style=flat)
