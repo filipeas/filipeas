@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on Backend development and Software Engineering.<br>👯 I’m looking to collaborate on awesome projects!<br>🤝 I’m looking for help with [artisan](https://github.com/filipeas/artisan), [boleto-banco-brasil](https://github.com/filipeas/boleto-banco-brasil) and [blockchain-js](https://github.com/filipeas/blockchain-js).<br>🌱 I’m currently learning Machine Learning, Typescript, Nodejs and design patterns.<br>💬 Ask me about backend developer and deep learning.<br>⚡ PHP will domain the world one day!
+🔭 I’m currently working on Backend development and Software Engineering.<br>👯 I’m looking to collaborate on awesome projects!<br>🤝 I’m looking for help with [artisan](https://github.com/filipeas/artisan) | [boleto-banco-brasil](https://github.com/filipeas/boleto-banco-brasil) | [blockchain-js](https://github.com/filipeas/blockchain-js).<br>🌱 I’m currently learning Machine Learning, Typescript, Nodejs and design patterns.<br>💬 Ask me about backend developer and deep learning.<br>⚡ PHP will domain the world one day!
 
 
 ## 🌐 Socials:
