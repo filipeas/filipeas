@@ -1,0 +1,4 @@
+.terminal {
+    /* 10 lines - weird */
+    height:calc(var(--size, 1) * 10 * 16px + 4px)
+  }

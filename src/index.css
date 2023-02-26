@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+    background-color: #555;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #555;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgb(129, 129, 129);
+}
+
+.white {
+    color: rgb(238, 238, 238);
+}
+
+.blue {
+    color: #9CEAF3;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+}
+
+body {
+    background-color: #a2a3b5;
+    background-image: url('wallpaper.jpeg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100vh;
+
+    font-family: 'Arial', monospace;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin: 20px;
+    cursor: text;
+}
