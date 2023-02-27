@@ -114,7 +114,7 @@ export default class Portfolio extends Component {
                             const div = $(`
                             <div>
                             <span>| Project name: ${pinned.node.name} <a href="${pinned.node.url}" target="_blank">go to project</a></span><br>
-                            <span>| Project name: ${pinned.node.description}</span><br>
+                            <span>| Description: ${pinned.node.description}</span><br>
                             <span>| Languages: ${pinned.node.languages.edges.map(language => language.node.name)}</span><br>
                             <span>--------------------</span><br>
                             </div>`
