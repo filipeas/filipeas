@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import './Menu.css';
 
+import { ApolloClient, InMemoryCache, gql, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
 import $ from 'jquery'
 import 'jquery.terminal';
 
@@ -43,14 +46,85 @@ export default class Portfolio extends Component {
                 this.echo("Access my github: https://github.com/filipeas")
             },
             projects: function () {
-                fetch('https://api.github.com/users/filipeas/repos')
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log(data)
-                        this.echo("BUILDING...")
+                const httpLink = createHttpLink({
+                    uri: 'https://api.github.com/graphql',
+                });
+
+                const authLink = setContext((_, { headers }) => {
+                    // get the authentication token from local storage if it exists
+                    const token = process.env.REACT_APP_GH_TOKEN;
+                    // return the headers to the context so httpLink can read them
+                    return {
+                        headers: {
+                            ...headers,
+                            authorization: token ? `Bearer ${token}` : "",
+                        }
+                    }
+                });
+
+                const client = new ApolloClient({
+                    link: authLink.concat(httpLink),
+                    cache: new InMemoryCache()
+                });
+
+                client
+                    .query({
+                        query: gql`
+                        query GetLocations {
+                                user(login: "filipeas") {
+                                    name
+                                    company
+                                    bio
+                                    twitterUsername
+                                    websiteUrl
+                                    url
+                                    pinnedItems(first: 6) {
+                                        totalCount
+                                        edges {
+                                            node {
+                                            ... on Repository {
+                                                id
+                                                name
+                                                description
+                                                url
+                                                stargazerCount
+                                                forkCount
+                                                languages(first: 2, orderBy: { field: SIZE, direction: DESC }) {
+                                                    edges {
+                                                        node {
+                                                        name
+                                                        color
+                                                        }
+                                                    }
+                                                }
+                                                object(expression: "master:README.md") {
+                                                    ... on Blob {
+                                                        text
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                        }`,
                     })
+                    .then((result) => {
+                        result.data.user.pinnedItems.edges.map(pinned => {
+                            const div = $(`
+                            <div>
+                            <span>| Project name: ${pinned.node.name} <a href="${pinned.node.url}" target="_blank">go to project</a></span><br>
+                            <span>| Project name: ${pinned.node.description}</span><br>
+                            <span>| Languages: ${pinned.node.languages.edges.map(language => language.node.name)}</span><br>
+                            <span>--------------------</span><br>
+                            </div>`
+                            );
+
+                            this.echo(div)
+                        });
+                    });
             },
-            contacts: function() {
+            contacts: function () {
                 const div = $(`
                         <span>
                         | <a href="https://drive.google.com/file/d/1dcsOn3RKn75j8BkU5qxByQ6KPTws0TBo/view">See my resume here</a><br>
@@ -58,7 +132,7 @@ export default class Portfolio extends Component {
                         | <a href="https://www.linkedin.com/in/filipe-a-s/">My LinkedIn</a>
                         </span>
                         `)
-                        this.echo(div);
+                this.echo(div);
             },
         }, {
             greetings: `${welcome} to filipe's terminal.\nDigit 'help' for more commands.`
